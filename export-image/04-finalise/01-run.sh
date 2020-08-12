@@ -16,7 +16,7 @@ if [ -d "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/.config" ]; then
 	chmod 700 "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/.config"
 fi
 
-rm -f "${ROOTFS_DIR}/usr/bin/qemu-arm-static"
+rm -f "${ROOTFS_DIR}/usr/bin/qemu-aarch64-static"
 
 if [ "${USE_QEMU}" != "1" ]; then
 	if [ -e "${ROOTFS_DIR}/etc/ld.so.preload.disabled" ]; then
@@ -53,9 +53,9 @@ rm -f "${ROOTFS_DIR}/root/.vnc/private.key"
 rm -f "${ROOTFS_DIR}/etc/vnc/updateid"
 
 update_issue "$(basename "${EXPORT_DIR}")"
-install -m 644 "${ROOTFS_DIR}/etc/rpi-issue" "${ROOTFS_DIR}/boot/issue.txt"
+install -m 644 "${ROOTFS_DIR}/etc/umbrel-issue" "${ROOTFS_DIR}/boot/issue.txt"
 
-cp "$ROOTFS_DIR/etc/rpi-issue" "$INFO_FILE"
+cp "$ROOTFS_DIR/etc/umbrel-issue" "$INFO_FILE"
 
 
 {
