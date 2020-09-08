@@ -233,8 +233,8 @@ if [[ -n "${WPA_PASSWORD}" && ${#WPA_PASSWORD} -lt 8 || ${#WPA_PASSWORD} -gt 63 
 	exit 1
 fi
 
-if [[ "${PUBKEY_ONLY_SSH}" = "1" && -z "${PUBKEY_SSH_FIRST_USER}" ]]; then
-	echo "Must set 'PUBKEY_SSH_FIRST_USER' to a valid SSH public key if using PUBKEY_ONLY_SSH"
+if [[ "${PUBKEY_ONLY_SSH}" = "1" && -z "${PUBKEY_SSH_FIRST_USER}" && -z ${GITHUB_USERNAME} ]]; then
+	echo "Must set 'PUBKEY_SSH_FIRST_USER' to a valid SSH public key or 'GITHUB_USERNAME' if using PUBKEY_ONLY_SSH"
 	exit 1
 fi
 
