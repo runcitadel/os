@@ -9,16 +9,18 @@
 [![Reddit](https://img.shields.io/reddit/subreddit-subscribers/getumbrel?label=Subscribe%20%2Fr%2Fgetumbrel&style=social)](https://reddit.com/r/getumbrel)
 
 
-# ☂️ OS
+# Umbrel OS Tweaks - Base image
 
 Umbrel OS is the operating system of Umbrel Bitcoin and Lightning node. It's based on Raspberry Pi OS (formerly Raspbian) and uses [pi-gen](https://github.com/RPi-Distro/pi-gen) for customization.
+
+This is a modified image that contains the full commit history of pi-gen, and doesn't contain merge and empty commits from Umbrel OS.
+In addition, it contains a few optimizations that aren't in Umbrel OS yet.
 
 ## 🚀 Getting started
 
 To run Umbrel on:
 
-- Raspberry Pi 4 (recommended) — [Download the latest Umbrel OS](https://github.com/getumbrel/umbrel-os/releases/latest)
-- Raspberry Pi 3 (no longer supported) - [Download Umbrel OS v0.2.10](https://github.com/getumbrel/umbrel-os/releases/tag/v0.2.10)
+- Raspberry Pi 4 (recommended) — [Download the latest Umbrel OS](https://github.com/UmbrelOS-Tweaks/base/releases/latest)
 - Any other hardware - [Manually install Umbrel](https://github.com/getumbrel/umbrel#-installation)
 
 ### Instructions:
@@ -55,12 +57,12 @@ SSH is enabled by default and you can use the following credentials to login to 
 
 Step 1. Clone this repo
 ```
-git clone https://github.com/getumbrel/umbrel-os.git
+git clone https://github.com/UmbrelOS-Tweaks/base.git
 ```
 
 Step 2. Switch to repo's directory
 ```
-cd umbrel-os
+cd base
 ```
 
 Step 3. BUIDL!
