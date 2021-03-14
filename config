@@ -8,4 +8,4 @@ BUILD_SCRIPTS="Umbrel OS official build scripts"
 BUILD_SCRIPTS_REPO="https://github.com/getumbrel/umbrel-os"
 UMBREL_VERSION=0.3.7
 UMBREL_REPO="https://github.com/AaronDewes/umbrel.git"
-UMBREL_BRANCH=patch-33
+UMBREL_BRANCH=reliable
