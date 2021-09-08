@@ -18,3 +18,5 @@ git
 lsmod:kmod
 bc
 docker
+qemu-nbd:qemu-utils
+kpartx
