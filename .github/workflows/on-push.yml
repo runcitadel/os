@@ -17,7 +17,7 @@ jobs:
               sudo sed -i 's/focal/hirsute/g' /etc/apt/sources.list
               sudo apt update
               sudo apt -y dist-upgrade
-              sudo apt install binfmt-support qemu-user-static quilt debootstrap apt-cacher-ng
+              sudo apt install binfmt-support qemu-user-static quilt debootstrap apt-cacher-ng libarchive-tools qemu-utils
               sudo sed 's/# PassThroughPattern:.*this would allow.*/PassThroughPattern: .* #/' -i /etc/apt-cacher-ng/acng.conf
               sudo chmod -R 0777 /var/cache/apt-cacher-ng
         - name: Set image name
