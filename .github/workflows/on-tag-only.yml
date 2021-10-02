@@ -40,15 +40,15 @@ jobs:
         
         - name: Set image name
           run: |
-                UMBREL_OS_VERSION="$(git describe --tags)"
-                IMAGE_NAME="umbrel-os-${UMBREL_OS_VERSION}"
-                echo "UMBREL_OS_VERSION=$UMBREL_OS_VERSION"  >> $GITHUB_ENV
+                CITADEL_OS_VERSION="$(git describe --tags)"
+                IMAGE_NAME="citadel-os-${CITADEL_OS_VERSION}"
+                echo "CITADEL_OS_VERSION=$CITADEL_OS_VERSION"  >> $GITHUB_ENV
                 echo "IMAGE_NAME=$IMAGE_NAME" >> $GITHUB_ENV
 
         - name: Run build script
           run: |
                 echo "Building $IMAGE_NAME"
-                sudo IMG_FILENAME=$IMAGE_NAME ZIP_FILENAME=$IMAGE_NAME UMBREL_OS_VERSION=$UMBREL_OS_VERSION ./build.sh
+                sudo IMG_FILENAME=$IMAGE_NAME ZIP_FILENAME=$IMAGE_NAME CITADEL_OS_VERSION=$CITADEL_OS_VERSION ./build.sh
 
         - name: Copy ZIP to current working dir
           run: cp deploy/*.zip ./

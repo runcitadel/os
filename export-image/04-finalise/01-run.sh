@@ -53,9 +53,9 @@ rm -f "${ROOTFS_DIR}/root/.vnc/private.key"
 rm -f "${ROOTFS_DIR}/etc/vnc/updateid"
 
 update_issue "$(basename "${EXPORT_DIR}")"
-install -m 644 "${ROOTFS_DIR}/etc/umbrel-issue" "${ROOTFS_DIR}/boot/issue.txt"
+install -m 644 "${ROOTFS_DIR}/etc/citadel-issue" "${ROOTFS_DIR}/boot/issue.txt"
 
-cp "$ROOTFS_DIR/etc/umbrel-issue" "$INFO_FILE"
+cp "$ROOTFS_DIR/etc/citadel-issue" "$INFO_FILE"
 
 
 {

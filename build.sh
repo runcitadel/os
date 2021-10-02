@@ -184,8 +184,8 @@ term() {
 
 trap term EXIT INT TERM
 
-export BUILD_SCRIPTS="${BUILD_SCRIPTS:-Umbrel OS official build scripts}"
-export BUILD_SCRIPTS_REPO="${BUILD_SCRIPTS_REPO:-https://github.com/getumbrel/umbrel-os}"
+export BUILD_SCRIPTS="${BUILD_SCRIPTS:-Citadel OS official build scripts}"
+export BUILD_SCRIPTS_REPO="${BUILD_SCRIPTS_REPO:-https://github.com/runcitadel/os}"
 
 if [ -z "${IMG_NAME}" ]; then
 	echo "IMG_NAME not set" 1>&2
@@ -203,9 +203,9 @@ export DEPLOY_DIR=${DEPLOY_DIR:-"${BASE_DIR}/deploy"}
 export DEPLOY_ZIP="${DEPLOY_ZIP:-1}"
 export LOG_FILE="${WORK_DIR}/build.log"
 
-export TARGET_HOSTNAME=${TARGET_HOSTNAME:-umbrel}
+export TARGET_HOSTNAME=${TARGET_HOSTNAME:-citadel}
 
-export FIRST_USER_NAME=${FIRST_USER_NAME:-umbrel}
+export FIRST_USER_NAME=${FIRST_USER_NAME:-citadel}
 export FIRST_USER_PASS=${FIRST_USER_PASS:-moneyprintergobrrr}
 export RELEASE=${RELEASE:-buster}
 export WPA_ESSID
@@ -247,9 +247,9 @@ export QUILT_NO_DIFF_INDEX=1
 export QUILT_NO_DIFF_TIMESTAMPS=1
 export QUILT_REFRESH_ARGS="-p ab"
 
-export UMBREL_VERSION
-export UMBREL_REPO
-export UMBREL_BRANCH
+export CITADEL_VERSION
+export CITADEL_REPO
+export CITADEL_BRANCH
 
 # shellcheck source=scripts/common
 source "${SCRIPT_DIR}/common"

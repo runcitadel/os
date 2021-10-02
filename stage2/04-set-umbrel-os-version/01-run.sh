@@ -1,2 +1,2 @@
-sed -i -e "s/UMBREL_OS=<version>/UMBREL_OS=$UMBREL_OS_VERSION/g" files/umbrel
-install -m 644 files/umbrel "${ROOTFS_DIR}"/etc/default/umbrel
+sed -i -e "s/CITADEL_OS=<version>/CITADEL_OS=$CITADEL_OS_VERSION/g" files/citadel
+install -m 644 files/citadel "${ROOTFS_DIR}"/etc/default/citadel
