@@ -1,27 +1,28 @@
-[![Umbrel OS](https://static.getumbrel.com/github/github-banner-umbrel-os.svg)](https://github.com/getumbrel/umbrel-os)
-
-[![Version](https://img.shields.io/github/v/release/getumbrel/umbrel-os?color=%235351FB&label=version)](https://github.com/getumbrel/umbrel-os/releases)
-[![Automated builds](https://img.shields.io/github/workflow/status/getumbrel/umbrel-os/Build%20image%20on%20push%20or%20PR?color=%235351FB)](https://github.com/getumbrel/umbrel-os/actions?query=workflow%3A"Build+image+on+push+or+PR")
-[![Community Chat](https://img.shields.io/badge/community%20chat-telegram-%235351FB)](https://t.me/getumbrel)
-[![Developer Chat](https://img.shields.io/badge/dev%20chat-keybase-%235351FB)](https://keybase.io/team/getumbrel)
-
-[![Twitter](https://img.shields.io/twitter/follow/getumbrel?style=social)](https://twitter.com/getumbrel)
-[![Reddit](https://img.shields.io/reddit/subreddit-subscribers/getumbrel?label=Subscribe%20%2Fr%2Fgetumbrel&style=social)](https://reddit.com/r/getumbrel)
+[![Version](https://img.shields.io/github/v/release/rubcitadel/dashboard?color=%235351FB&label=version)](https://github.com/runcitadel/dashboard/releases)
+[![Docker Build](https://img.shields.io/github/workflow/status/runcitadel/umbrel-dashboard/Docker%20build%20on%20push?color=%235351FB)](https://github.com/runcitadel/dashboard/actions?query=workflow%3A"Docker+build+on+push")
+[![Docker Pulls](https://img.shields.io/docker/pulls/runcitadel/dashboard?color=%235351FB)](https://hub.docker.com/repository/registry-1.docker.io/runcitadel/dashboard/tags?page=1)
+[![Discord Server](https://img.shields.io/badge/Community%20Chat-Discord-%235351FB)](https://discord.gg/6U3kM2cjdB)
+[![Twitter](https://img.shields.io/twitter/follow/runcitadel?style=social)](https://twitter.com/runcitadel)
 
 
-# Umbrel OS Tweaks - Base image
+# Citadel OS Tweaks - Base image
 
-Umbrel OS is the operating system of Umbrel Bitcoin and Lightning node. It's based on Raspberry Pi OS (formerly Raspbian) and uses [pi-gen](https://github.com/RPi-Distro/pi-gen) for customization.
+Citadel OS is the operating system of Umbrel Bitcoin and Lightning node. It's based on Raspberry Pi OS (formerly Raspbian) and uses [pi-gen](https://github.com/RPi-Distro/pi-gen) for customization.
 
 This is a modified image that contains the full commit history of pi-gen, and doesn't contain merge and empty commits from Umbrel OS.
 In addition, it contains a few optimizations that aren't in Umbrel OS yet.
 
+## ⚠️ Outdated information
+
+The information below might be outdated and / or refering to Umbrel. This project is not yet fully off it's Umbrel roots.
+
+
 ## 🚀 Getting started
 
-To run Umbrel on:
+To run Citadel on:
 
-- Raspberry Pi 4 (recommended) — [Download the latest Umbrel OS](https://github.com/UmbrelOS-Tweaks/base/releases/latest)
-- Any other hardware - [Manually install Umbrel](https://github.com/getumbrel/umbrel#-installation)
+- Raspberry Pi 4 (recommended) 
+- Any other hardware
 
 ### Instructions:
 
@@ -100,14 +101,14 @@ Other Raspbian-related stuff can be found in [Raspbian's documentation](https://
 
 We welcome and appreciate new contributions!
 
-If you're a developer looking to help but not sure where to begin, check out [these issues](https://github.com/getumbrel/umbrel-os/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) that have specifically been marked as being friendly to new contributors.
-
-If you're looking for a bigger challenge, before opening a pull request please [create an issue](https://github.com/getumbrel/umbrel-os/issues/new/choose) or [join our community chat](https://t.me/getumbrel) to get feedback, discuss the best way to tackle the challenge, and to ensure that there's no duplication of work.
 
 ---
 
 _"Being open source means anyone can independently review the code. If it was closed source, nobody could verify the security. I think it's essential for a program of this nature to be open source." — Satoshi Nakamoto_
 
-[![License](https://img.shields.io/github/license/getumbrel/umbrel-os?color=%235351FB)](https://github.com/getumbrel/umbrel-os/blob/master/LICENSE)
 
-[getumbrel.com](https://getumbrel.com)
+## 📜 License
+
+### ⚠️ This information is refering Citadel's Umbrel basis, it is migrating off Umbrel to AGPL.
+
+Umbrel (and Umbrel Dashboard) is licensed under the PolyForm Noncommercial 1.0.0 license. [...]
