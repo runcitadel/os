@@ -83,9 +83,9 @@ The `config` file has system defaults which are used when building the image and
 
 - `CITADEL_VERSION` - To install the specific [Umbrel](https://github.com/getumbrel/umbrel) version.
 
-- `GITHUB_USERNAME` - To automatically login to your Umbrel without typing a password.
+- `GITHUB_USERNAME` - To automatically login to your node without typing a password.
 
-- `CITADEL_REPO` - A custom git repo used to download Umbrel. `CITADEL_VERSION` is ignored if this is set, but it is required to also set `CITADEL_BRANCH`.
+- `CITADEL_REPO` - A custom git repo used to download Citadek. `CITADEL_VERSION` is ignored if this is set, but it is required to also set `CITADEL_BRANCH`.
 
 - `CITADEL_BRANCH` - The git branch or commit SHA in the custom repo that should be checked out.
 
@@ -95,7 +95,7 @@ Other Raspbian-related stuff can be found in [Raspbian's documentation](https://
 
 ### ⚡️ Don't be too reckless
 
-> Umbrel is still in an early stage and things are expected to break every now and then. We **DO NOT** recommend running it on mainnet with real money just yet, unless you want to be really *#reckless*.
+> Citadel is still in an early stage and things are expected to break every now and then. We **DO NOT** recommend running it on mainnet with real money just yet, unless you want to be really *#reckless*.
 
 ## ❤️ Contributing
 

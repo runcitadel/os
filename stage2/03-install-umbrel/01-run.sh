@@ -1,15 +1,18 @@
 #!/bin/bash -e
 
 # This script:
-# - Installs Umbrel's dependencies
-# - Installs Umbrel
+# - Installs citadel's dependencies
+# - Installs citadel
 
 # Install Docker
-echo "Installing Docker..."
+echo "Installing Docker and the compose plugin..."
 echo
 on_chroot << EOF
 curl -fsSL https://get.docker.com | sh
 usermod -a -G docker $FIRST_USER_NAME
+mkdir -p /usr/lib/docker/cli-plugins
+curl -o /usr/lib/docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.0.1/docker-compose-linux-aarch64
+chmod +x /usr/lib/docker/cli-plugins/docker-compose
 EOF
 
 # Bind Avahi to eth0,wlan0 interfaces to prevent hostname cycling
@@ -31,26 +34,26 @@ echo
 mkdir /citadel
 cd /citadel
 if [ -z ${CITADEL_REPO} ]; then
-curl -L https://github.com/runcitadel/compose/archive/v${CITADEL_VERSION}.tar.gz | tar -xz --strip-components=1
+curl -L https://github.com/runcitadel/compose-nonfree/archive/v${CITADEL_VERSION}.tar.gz | tar -xz --strip-components=1
 else
 git clone ${CITADEL_REPO} .
 git checkout "${CITADEL_BRANCH}"
 fi
 
 # Enable Citadel OS systemd services
-cd scripts/umbrel-os/services
+cd scripts/citadel-os/services
 CITADEL_SYSTEMD_SERVICES=$(ls *.service)
 echo "Enabling Citadel systemd services: ${CITADEL_SYSTEMD_SERVICES}"
 for service in $CITADEL_SYSTEMD_SERVICES; do
-    sed -i -e "s/\/home\/umbrel/\/home\/${FIRST_USER_NAME}/g" "${service}"
+    sed -i -e "s/\/home\/citadel/\/home\/${FIRST_USER_NAME}/g" "${service}"
     install -m 644 "${service}"   "${ROOTFS_DIR}/etc/systemd/system/${service}"
     on_chroot << EOF
 systemctl enable "${service}"
 EOF
 done
 
-# Replace /home/umbrel with home/$FIRST_USER_NAME in other scripts
-sed -i -e "s/\/home\/umbrel/\/home\/${FIRST_USER_NAME}/g" "/citadel/scripts/umbrel-os/umbrel-details"
+# Replace /home/citadel with home/$FIRST_USER_NAME in other scripts
+sed -i -e "s/\/home\/citadel/\/home\/${FIRST_USER_NAME}/g" "/citadel/scripts/citadel-os/citadel-details"
 
 # Copy Citadel to image
 mkdir "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/citadel"
@@ -63,7 +66,7 @@ EOF
 
 echo "Pulling docker images..."
 echo
-cd /citael
+cd /citadel
 IMAGES=$(grep '^\s*image' docker-compose.yml | sed 's/image://' | sed 's/\"//g' | sed '/^$/d;s/[[:blank:]]//g' | sort | uniq)
 echo
 echo "Images to bundle: $IMAGES"

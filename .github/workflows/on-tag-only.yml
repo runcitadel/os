@@ -60,7 +60,7 @@ jobs:
           with:
             route: POST /repos/{owner}/{repo}/releases/latest
             owner: runcitadel
-            repo: compose
+            repo: compose-nonfree
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
