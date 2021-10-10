@@ -16,7 +16,6 @@ policykit-1
 ssh-import-id
 rng-tools5
 ethtool
-vl805fw
 pciutils
 rpi-eeprom
 cifs-utils
