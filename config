@@ -5,4 +5,4 @@ FIRST_USER_NAME=citadel
 FIRST_USER_PASS=moneyprintergobrrr
 ENABLE_SSH=1
 CITADEL_REPO=https://github.com/runcitadel/compose-nonfree
-CITADEL_BRANCH=main
+CITADEL_BRANCH=dev
