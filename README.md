@@ -1,16 +1,11 @@
-[![Version](https://img.shields.io/github/v/release/rubcitadel/dashboard?color=%235351FB&label=version)](https://github.com/runcitadel/dashboard/releases)
-[![Docker Build](https://img.shields.io/github/workflow/status/runcitadel/umbrel-dashboard/Docker%20build%20on%20push?color=%235351FB)](https://github.com/runcitadel/dashboard/actions?query=workflow%3A"Docker+build+on+push")
-[![Docker Pulls](https://img.shields.io/docker/pulls/runcitadel/dashboard?color=%235351FB)](https://hub.docker.com/repository/registry-1.docker.io/runcitadel/dashboard/tags?page=1)
+[![Version](https://img.shields.io/github/v/release/runcitadel/os?color=%235351FB&label=version)](https://github.com/runcitadel/os/releases)
 [![Discord Server](https://img.shields.io/badge/Community%20Chat-Discord-%235351FB)](https://discord.gg/6U3kM2cjdB)
 [![Twitter](https://img.shields.io/twitter/follow/runcitadel?style=social)](https://twitter.com/runcitadel)
 
 
-# Citadel OS Tweaks - Base image
+# Citadel OS - Base image
 
 Citadel OS is the operating system of Umbrel Bitcoin and Lightning node. It's based on Raspberry Pi OS (formerly Raspbian) and uses [pi-gen](https://github.com/RPi-Distro/pi-gen) for customization.
-
-This is a modified image that contains the full commit history of pi-gen, and doesn't contain merge and empty commits from Umbrel OS.
-In addition, it contains a few optimizations that aren't in Umbrel OS yet.
 
 ## ⚠️ Outdated information
 
