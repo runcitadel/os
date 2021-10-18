@@ -2,4 +2,5 @@ git
 fswatch
 jq
 python3-qrcode
+python3-pip
 unattended-upgrades
