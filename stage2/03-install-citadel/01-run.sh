@@ -22,10 +22,6 @@ on_chroot << EOF
 sed -i "s/#allow-interfaces=eth0/allow-interfaces=eth0,wlan0/g;" "/etc/avahi/avahi-daemon.conf";
 EOF
 
-on_chroot << EOF
-echo "denyinterfaces veth*" | tee -a /etc/dhcpcd.conf
-EOF
-
 # Install Citadel
 echo "Installing Citadel..."
 echo
