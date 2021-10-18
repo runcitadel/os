@@ -1,1 +1,1 @@
-CITADEL_OS=<version>
+export CITADEL_OS=<version>
