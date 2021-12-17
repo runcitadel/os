@@ -6,3 +6,4 @@ python3-pip
 unattended-upgrades
 python3-yaml
 python3-jsonschema
+python3-dacite

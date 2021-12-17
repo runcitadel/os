@@ -16,6 +16,10 @@ jobs:
           with:
             fetch-depth: 0
 
+        - name: Initial cleanup
+          run: |
+              rm -rf /citadel
+
         - name: Set image name
           run: |
                 CITADEL_OS_VERSION="$(git describe --tags)"
