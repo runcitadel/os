@@ -73,6 +73,9 @@ disable_overscan=1
 # This line should be removed if the legacy DWC2 controller is required
 # (e.g. for USB device mode) or if USB support is not required.
 otg_mode=1
+# Enable I2C and I2C bus 1 for the fan on the BitPiRat
+dtparam=i2c_arm=on
+dtparam=i2c_vc=on
 
 [all]
 

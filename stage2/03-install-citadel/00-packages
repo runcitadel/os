@@ -7,3 +7,4 @@ unattended-upgrades
 python3-yaml
 python3-jsonschema
 python3-dacite
+i2c-tools
