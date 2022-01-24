@@ -36,8 +36,8 @@ jobs:
         - name: Run build script
           run: |
               echo "Building $IMAGE_NAME"
-              docker system prune --all --force
-              IMG_FILENAME=$IMAGE_NAME ZIP_FILENAME=$IMAGE_NAME CITADEL_OS_VERSION=$CITADEL_OS_VERSION ./build.sh
+              sudo docker system prune --all --force
+              sudo IMG_FILENAME=$IMAGE_NAME ZIP_FILENAME=$IMAGE_NAME CITADEL_OS_VERSION=$CITADEL_OS_VERSION ./build.sh
 
         - name: Copy ZIP to current working dir
           run: cp deploy/*.zip ./
