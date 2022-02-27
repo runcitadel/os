@@ -3,3 +3,4 @@ dhcpcd5
 net-tools
 libzbar-dev
 libzbar0
+raspberrypi-net-mods
