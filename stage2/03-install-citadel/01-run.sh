@@ -11,7 +11,7 @@ on_chroot << EOF
 curl -fsSL https://get.docker.com | sh
 usermod -a -G docker $FIRST_USER_NAME
 mkdir -p /usr/lib/docker/cli-plugins
-curl -o /usr/lib/docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.0.1/docker-compose-linux-aarch64
+curl -o /usr/lib/docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.2.2/docker-compose-linux-aarch64
 chmod +x /usr/lib/docker/cli-plugins/docker-compose
 EOF
 

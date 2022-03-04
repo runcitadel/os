@@ -4,7 +4,7 @@ on: ["push", "pull_request"]
 jobs:
     build:
 
-        runs-on: self-hosted
+        runs-on: ubuntu-20.04
         
         steps:
         
@@ -12,9 +12,14 @@ jobs:
           with:
             fetch-depth: 0
 
-        - name: Initial cleanup
+        - name: Dependencies
           run: |
-              rm -rf /citadel
+              sudo sed -i 's/focal/hirsute/g' /etc/apt/sources.list
+              sudo apt update
+              sudo apt -y dist-upgrade
+              sudo apt install binfmt-support qemu-user-static quilt debootstrap apt-cacher-ng libarchive-tools qemu-utils
+              sudo sed 's/# PassThroughPattern:.*this would allow.*/PassThroughPattern: .* #/' -i /etc/apt-cacher-ng/acng.conf
+              sudo chmod -R 0777 /var/cache/apt-cacher-ng
         - name: Set image name
           run: |
               CITADEL_OS_VERSION="$(git describe --tags)"
@@ -37,8 +42,8 @@ jobs:
           run: |
               echo "Building $IMAGE_NAME"
               sudo docker system prune --all --force
+              sudo docker logout ghcr.io
               sudo IMG_FILENAME=$IMAGE_NAME ZIP_FILENAME=$IMAGE_NAME CITADEL_OS_VERSION=$CITADEL_OS_VERSION ./build.sh
-
         - name: Copy ZIP to current working dir
           run: cp deploy/*.zip ./
 

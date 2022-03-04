@@ -25,7 +25,7 @@ dependencies_check()
 		echo
 		echo "This can be resolved on Debian/Raspbian systems by installing:"
 		echo "$missing"
-		false
+		#false
 	fi
 
     # If we're building on a native arm platform, we don't need to check for
