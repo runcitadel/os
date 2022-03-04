@@ -42,6 +42,7 @@ jobs:
           run: |
               echo "Building $IMAGE_NAME"
               sudo docker system prune --all --force
+              sudo docker logout ghcr.io
               sudo IMG_FILENAME=$IMAGE_NAME ZIP_FILENAME=$IMAGE_NAME CITADEL_OS_VERSION=$CITADEL_OS_VERSION ./build.sh
         - name: Copy ZIP to current working dir
           run: cp deploy/*.zip ./
