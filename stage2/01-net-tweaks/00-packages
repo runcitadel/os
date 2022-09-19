@@ -3,4 +3,5 @@ dhcpcd5
 net-tools
 libzbar-dev
 libzbar0
+network-manager
 raspberrypi-net-mods

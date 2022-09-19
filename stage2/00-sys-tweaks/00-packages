@@ -19,3 +19,4 @@ ethtool
 pciutils
 rpi-eeprom
 cifs-utils
+file
