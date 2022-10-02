@@ -11,7 +11,7 @@ on_chroot << EOF
 curl -fsSL https://get.docker.com | sh
 usermod -a -G docker $FIRST_USER_NAME
 mkdir -p /usr/lib/docker/cli-plugins
-curl -o /usr/lib/docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.2.2/docker-compose-linux-aarch64
+curl -o /usr/lib/docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.10.2/docker-compose-linux-aarch64
 chmod +x /usr/lib/docker/cli-plugins/docker-compose
 EOF
 
@@ -30,7 +30,7 @@ echo
 mkdir /citadel
 cd /citadel
 if [ -z ${CITADEL_REPO} ]; then
-curl -L https://github.com/runcitadel/compose-nonfree/archive/v${CITADEL_VERSION}.tar.gz | tar -xz --strip-components=1
+curl -L https://github.com/runcitadel/core/archive/v${CITADEL_VERSION}.tar.gz | tar -xz --strip-components=1
 else
 git clone ${CITADEL_REPO} .
 git checkout "${CITADEL_BRANCH}"
