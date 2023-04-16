@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
 # This script:
-# - Installs citadel's dependencies
-# - Installs citadel
+# - Installs Citadel's dependencies
+# - Installs Citadel
 
 # Install Docker
 echo "Installing Docker and the compose plugin..."
@@ -10,9 +10,6 @@ echo
 on_chroot << EOF
 curl -fsSL https://get.docker.com | sh
 usermod -a -G docker $FIRST_USER_NAME
-mkdir -p /usr/lib/docker/cli-plugins
-curl -o /usr/lib/docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.10.2/docker-compose-linux-aarch64
-chmod +x /usr/lib/docker/cli-plugins/docker-compose
 EOF
 
 # Bind Avahi to eth0,wlan0 interfaces to prevent hostname cycling
