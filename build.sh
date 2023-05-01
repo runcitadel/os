@@ -21,7 +21,7 @@ EOF
 			PACKAGES="$(sed -f "${SCRIPT_DIR}/remove-comments.sed" < "${i}-packages-nr")"
 			if [ -n "$PACKAGES" ]; then
 				on_chroot << EOF
-apt-get -o APT::Acquire::Retries=3 install --no-install-recommends -y $PACKAGES
+apt-get -o Acquire::Retries=3 install --no-install-recommends -y $PACKAGES
 EOF
 				if [ "${USE_QCOW2}" = "1" ]; then
 					on_chroot << EOF
@@ -36,7 +36,7 @@ EOF
 			PACKAGES="$(sed -f "${SCRIPT_DIR}/remove-comments.sed" < "${i}-packages")"
 			if [ -n "$PACKAGES" ]; then
 				on_chroot << EOF
-apt-get -o APT::Acquire::Retries=3 install -y $PACKAGES
+apt-get -o Acquire::Retries=3 install -y $PACKAGES
 EOF
 				if [ "${USE_QCOW2}" = "1" ]; then
 					on_chroot << EOF
@@ -224,8 +224,8 @@ export LOG_FILE="${WORK_DIR}/build.log"
 export TARGET_HOSTNAME=${TARGET_HOSTNAME:-citadel}
 
 export FIRST_USER_NAME=${FIRST_USER_NAME:-citadel}
-export FIRST_USER_PASS=${FIRST_USER_PASS:-moneyprintergobrrr}
-export RELEASE=${RELEASE:-bullseye}
+export FIRST_USER_PASS=${FIRST_USER_PASS:-freedom}
+export RELEASE=${RELEASE:-bullseye} # Don't forget to update stage0/prerun.sh
 export WPA_ESSID
 export WPA_PASSWORD
 export WPA_COUNTRY
@@ -286,11 +286,21 @@ fi
 
 export NO_PRERUN_QCOW2="${NO_PRERUN_QCOW2:-1}"
 
+if [ "$SETFCAP" != "1" ]; then
+	export CAPSH_ARG="--drop=cap_setfcap"
+fi
+
 dependencies_check "${BASE_DIR}/depends"
 
 #check username is valid
 if [[ ! "$FIRST_USER_NAME" =~ ^[a-z][-a-z0-9_]*$ ]]; then
 	echo "Invalid FIRST_USER_NAME: $FIRST_USER_NAME"
+	exit 1
+fi
+
+if [ -z "${FIRST_USER_PASS}" ]; then
+	echo "FIRST_USER_PASS needs to be set"
+	echo "Not setting FIRST_USER_PASS makes your system vulnerable and open to cyberattacks"
 	exit 1
 fi
 

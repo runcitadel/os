@@ -19,3 +19,5 @@ ethtool
 pciutils
 rpi-eeprom
 cifs-utils
+file
+kms++-utils

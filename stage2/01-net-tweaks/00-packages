@@ -1,6 +1,7 @@
 wpasupplicant wireless-tools firmware-brcm80211
 dhcpcd5
 net-tools
+network-manager
 libzbar-dev
 libzbar0
 raspberrypi-net-mods
