@@ -18,7 +18,7 @@ The `config` file has system defaults which are used when building the image and
 
 - `GITHUB_USERNAME` - To automatically login to your node without typing a password.
 
-- `CITADEL_REPO` - A custom git repo used to download Citadek. `CITADEL_VERSION` is ignored if this is set, but it is required to also set `CITADEL_BRANCH`.
+- `CITADEL_REPO` - A custom git repo used to download Citadel. `CITADEL_VERSION` is ignored if this is set, but it is required to also set `CITADEL_BRANCH`.
 
 - `CITADEL_BRANCH` - The git branch or commit SHA in the custom repo that should be checked out.
 
